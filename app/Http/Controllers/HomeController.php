@@ -11,6 +11,8 @@ class HomeController extends Controller
   {
     $blogs = Blog::with('user')->get();
 
+    return $blogs;
+
     return view('home', compact('blogs'));
   }
 }
