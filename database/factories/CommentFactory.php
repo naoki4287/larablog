@@ -21,7 +21,7 @@ class CommentFactory extends Factory
       'blog_id' => Blog::factory(),
       'name' => $this->faker->name,
       'body' => $this->faker->realText(100),
-      'created_at' => $this->faker->dateTimeBetween('-10days', '0days')
+      'created_at' => $this->faker->dateTimeBetween('-10days', '0days'),
     ];
   }
 }
