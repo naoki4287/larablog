@@ -7,12 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Model
 {
-    use HasFactory;
+  use HasFactory;
 
-    public function user()
-    {
-      return $this->belongsTo(User::class)->withDefault([
-        'name' => ' (退会者) '
-      ]);
-    }
+  public function user()
+  {
+    return $this->belongsTo(User::class)->withDefault([
+      'name' => ' (退会者) '
+    ]);
+  }
+
+  public function comments()
+  {
+    return $this->hasMany(Comment::class);
+  }
 }
