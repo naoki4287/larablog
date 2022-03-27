@@ -7,7 +7,10 @@
 <ul>
   @foreach ($blogs as $blog)
   {{-- <li>{{ $blog->title }} {{ $blog->user()->first->name }}</li> --}}
-  <li>{{ $blog->title }} {{ $blog->user->name }} ({{ $blog->comments_count }}件のコメント) <small>{{ $blog->updated_at }}</small></li>
+  <li><a href="{{ route('blog.show', $blog )}}">{{ $blog->title }}</a> 
+    {{ $blog->user->name }} 
+    ({{ $blog->comments_count }}件のコメント) <small>{{ $blog->updated_at }}</small>
+  </li>
   
   
 
