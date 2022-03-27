@@ -6,29 +6,30 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('blogs', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id');
-            $table->string('title');
-            $table->text('body');
-            $table->timestamps();
-        });
-    }
+  /**
+   * Run the migrations.
+   *
+   * @return void
+   */
+  public function up()
+  {
+    Schema::create('blogs', function (Blueprint $table) {
+      $table->id();
+      $table->foreignId('user_id');
+      $table->boolean('is_open');
+      $table->string('title');
+      $table->text('body');
+      $table->timestamps();
+    });
+  }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('blogs');
-    }
+  /**
+   * Reverse the migrations.
+   *
+   * @return void
+   */
+  public function down()
+  {
+    Schema::dropIfExists('blogs');
+  }
 };

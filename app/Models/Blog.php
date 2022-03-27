@@ -20,4 +20,9 @@ class Blog extends Model
   {
     return $this->hasMany(Comment::class);
   }
+
+  public function scopeOnlyPublic($query) 
+  {
+    return $query->where('is_open', true);
+  }
 }
